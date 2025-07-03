@@ -1,0 +1,223 @@
+/* Birthday Website Magical Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #667eea 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Glitter Background Effect */
+.glitter-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glitter {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(45deg, #ffd700, #ffff00, #ffffff);
+    border-radius: 50%;
+    animation: glitterFall linear infinite;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes glitterFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Container and Layout */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+    display: none;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+}
+
+.section.active {
+    display: block;
+    animation: magicalEntrance 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.content, .game-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 40px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Magical Text Effects */
+.glitter-text {
+    font-size: 4rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #ff1744, #9c27b0);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(255,255,255,0.5);
+}
+
+.sparkle-text {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Magical Buttons */
+.magical-btn {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.magical-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Images Grid */
+.magical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.image-option {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 3px solid rgba(255,255,255,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.image-option:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: #3498db;
+    box-shadow: 0 25px 50px rgba(52,152,219,0.3);
+}
+
+.image-option img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-option:hover img {
+    transform: scale(1.1);
+}
+
+.image-option.correct {
+    border-color: #27ae60;
+    animation: correctPulse 0.8s ease-in-out;
+    box-shadow: 0 0 50px rgba(39,174,96,0.6);
+}
+
+.image-option.wrong {
+    border-color: #e74c3c;
+    animation: wrongShake 0.6s ease-in-out;
+    box-shadow: 0 0 30px rgba(231,76,60,0.5);
+}
+
+@keyframes correctPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-15px); }
+    75% { transform: translateX(15px); }
+}
+
+/* Message Box */
+.message-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,248,255,0.9));
+    border: 2px solid rgba(123,97,255,0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(123,97,255,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glitter-text { font-size: 2.5rem; }
+    .sparkle-text { font-size: 1.8rem; }
+    .content, .game-container { padding: 30px 20px; }
+    .magical-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .image-option img { height: 200px; }
+}
+
+/* Animation */
+@keyframes magicalEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(10deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0px);
+    }
+}

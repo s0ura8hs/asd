@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday shreya! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Glitter Background -->
+    <div class="glitter-container" id="glitterContainer"></div>
+    
+    <!-- Floating Hearts -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <div class="container">
+        <!-- Opening Section -->
+        <section id="opening" class="section active">
+            <div class="content">
+                <h1 class="birthday-title glitter-text">🎉 Happy Birthday 🎉</h1>
+                <h2 class="name sparkle-text">shreya</h2>
+                <div class="message-box">
+                    <p class="opening-text">asdfghjkl</p>
+                </div>
+                <button class="start-btn magical-btn" onclick="startGame()">
+                    <span class="btn-text">Let's Begin! ✨</span>
+                    <div class="btn-sparkles"></div>
+                </button>
+            </div>
+            <div class="floating-emojis">
+                <span class="emoji">🎂</span>
+                <span class="emoji">🎈</span>
+                <span class="emoji">🎉</span>
+                <span class="emoji">✨</span>
+                <span class="emoji">🎁</span>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="game" class="section">
+            <div class="game-container magical-card">
+                <div class="question-header">
+                    <h3 class="question-title">Question <span id="questionNumber">1</span> of 3</h3>
+                    <div class="sparkle-line"></div>
+                </div>
+                <p id="questionText" class="question magical-text">edc</p>
+                
+                <div class="images-grid magical-grid" id="imagesGrid">
+                    <!-- Images will be populated by JavaScript -->
+                </div>
+                
+                <div class="score-container">
+                    <div class="score magical-score">
+                        ✨ Score: <span id="score">0</span>/3 ✨
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ending Section -->
+        <section id="ending" class="section">
+            <div class="content celebration-content">
+                <div class="celebration-animation">
+                    <h1 class="ending-title celebration-title">🎊 Amazing Job! 🎊</h1>
+                    <div class="confetti-explosion"></div>
+                </div>
+                <p class="final-score rainbow-text">You scored <span id="finalScore">0</span> out of 3!</p>
+                <div class="message-box celebration-message">
+                    <p class="ending-text">asdffvc</p>
+                </div>
+                <button class="restart-btn magical-btn celebration-btn" onclick="restartGame()">
+                    <span class="btn-text">Play Again 🔄</span>
+                    <div class="btn-sparkles"></div>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="assets/sounds/i-like-me-better.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
